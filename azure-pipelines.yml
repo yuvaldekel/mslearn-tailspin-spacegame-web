@@ -43,7 +43,7 @@ steps:
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration $(buildConfiguration)'
-      projects: '**/*.csproj'
+      projects: '**/*.web.csproj'
   
   - task: DotNetCoreCLI@2
     displayName: 'Install .NET tools from local manifest'
@@ -77,7 +77,7 @@ steps:
     displayName: 'Publish the project - $(buildConfiguration)'
     inputs:
       command: 'publish'
-      projects: '**/*.csproj'
+      projects: '**/*.web.csproj'
       publishWebProjects: false
       arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
       zipAfterPublish: true
