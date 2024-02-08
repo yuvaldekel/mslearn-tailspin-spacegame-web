@@ -43,7 +43,7 @@ steps:
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration $(buildConfiguration)'
-      projects: '**/*.Web.csproj'
+      projects: '**/*.csproj'
   
   - task: DotNetCoreCLI@2
     displayName: 'Install .NET tools from local manifest'
